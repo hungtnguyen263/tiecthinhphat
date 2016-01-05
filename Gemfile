@@ -43,6 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
-gem "rmagick"
+gem 'mini_magick'
 gem "carrierwave"
 

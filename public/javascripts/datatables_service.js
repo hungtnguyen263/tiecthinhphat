@@ -21,7 +21,7 @@ $(function() {
         columnDefs: [{ 
             orderable: false,
             width: '100px',
-            targets: [ 3 ]
+            targets: [ 4 ]
         }],
         dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
         language: {
@@ -39,7 +39,7 @@ $(function() {
 
 
     // Basic datatable
-    $('.datatable-menu-content').DataTable();
+    $('.datatable-service').DataTable();
 
 
     // Alternative pagination

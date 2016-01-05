@@ -1,25 +1,46 @@
-<%= form_for(@picture) do |f| %>
-  <% if @picture.errors.any? %>
+<% if @picture.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
-
-      <ul>
-      <% @picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <% @picture.errors.full_messages.each do |message| %>
+            <span class="label label-warning"><%= message %></span>
+        <% end %>
+        <hr/>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+<%= form_for @picture, html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+        <%= f.label "Hình ảnh: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+          <%= f.file_field :image_url, class: "file-styled" %>
+          <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+          <%= image_tag(@picture.image_url, size: "250x150", alt: "Hình ảnh", class: "img-rouded") %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label "Tiêu đề: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :title, placeholder: "Tiêu đề của hình ảnh", class: "form-control" %>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <%= f.label "Thẻ: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.collection_select(:type_id, Type.all, :id, :title, {:prompt => "Chọn thẻ..."}, {class: "select"}) %>
+        </div>
+    </div>
+
+    <div class="text-right">
+        <button type="submit" class="btn btn-success">Lưu <i class="icon-plus22 position-right"></i></button>
+    </div>
+<% end %>
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/assets/js/plugins/forms/styling/uniform.min.js' %>
+<%= javascript_include_tag '/assets/js/core/app.js' %>
+
+<%= javascript_include_tag '/assets/js/pages/form_layouts.js' %>
+<%= javascript_include_tag '/assets/js/plugins/forms/selects/select2.min.js' %>
+<!-- /theme JS files -->
