@@ -1,0 +1,16 @@
+.text-justify {
+	text-align: justify;
+}
+.text-red {
+	color: red;
+	font-weight: bold;
+}
+.text-orange {
+	color: #ff9900;
+}
+.text-purple {
+	color: #660066;
+}
+.text-blue {
+	color: #0000ff;
+}

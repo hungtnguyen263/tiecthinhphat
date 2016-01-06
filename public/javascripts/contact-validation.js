@@ -6,9 +6,11 @@ function checkForm() {
         return false;
     } else if (phone == "") {
         return false;
+    } else if (title == "") {
+        return false;
     } else if (message == "") {
         return false;
     }
-    alert("Cảm ơn bạn đã gửi tin nhắn liên hệ!");
+    alert("Cảm ơn Qúy khách đã gửi tin nhắn liên hệ!");
     return true;
 }
