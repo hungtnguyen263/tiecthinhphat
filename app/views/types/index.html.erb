@@ -22,9 +22,7 @@
     <!-- Basic datatable -->
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <%= link_to 'Tạo thẻ mới', new_type_path, class: 'btn btn-primary' %>
-            <hr/>
-            <h5 class="panel-title">Danh sách <span class="text-semibold">thẻ</span></h5>
+            <h5 class="panel-title">Danh sách <span class="text-semibold">THẺ</span></h5>
             <div class="heading-elements">
                 <ul class="icons-list">
                     <li><a data-action="collapse"></a></li>
@@ -61,9 +59,6 @@
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
                                             <%= link_to '<i class="glyphicon glyphicon-edit"></i> Chỉnh sửa'.html_safe, edit_type_path(item) %>
-                                        </li>
-                                        <li>
-                                            <%= link_to '<i class="icon-cross2"></i> Xóa'.html_safe, item, method: :delete, data: {confirm: 'Bạn có chắc muốn xóa?'} %>
                                         </li>
                                     </ul>
                                 </li>

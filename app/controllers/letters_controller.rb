@@ -28,7 +28,7 @@ class LettersController < ApplicationController
 
     respond_to do |format|
       if @letter.save
-        format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
+        format.html { redirect_to @letter, notice: 'Thư/bài viết đã được tạo mới thành công.' }
         format.json { render :show, status: :created, location: @letter }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LettersController < ApplicationController
   def update
     respond_to do |format|
       if @letter.update(letter_params)
-        format.html { redirect_to @letter, notice: 'Letter was successfully updated.' }
+        format.html { redirect_to @letter, notice: 'Thư/bài viết đã được cập nhật thành công.' }
         format.json { render :show, status: :ok, location: @letter }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class LettersController < ApplicationController
   def destroy
     @letter.destroy
     respond_to do |format|
-      format.html { redirect_to letters_url, notice: 'Letter was successfully destroyed.' }
+      format.html { redirect_to letters_url, notice: 'Thư/bài viết đã được xóa thành công.' }
       format.json { head :no_content }
     end
   end

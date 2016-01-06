@@ -22,8 +22,6 @@
     <!-- Basic datatable -->
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <%= link_to 'Tạo dịch vụ mới', new_service_path, class: 'btn btn-primary' %>
-            <hr/>
             <h5 class="panel-title">Danh sách - <span class="text-semibold">Dịch vụ</span></h5>
             <div class="heading-elements">
                 <ul class="icons-list">
@@ -69,9 +67,6 @@
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
                                             <%= link_to '<i class="glyphicon glyphicon-edit"></i> Chỉnh sửa'.html_safe, edit_service_path(item) %>
-                                        </li>
-                                        <li>
-                                            <%= link_to '<i class="icon-cross2"></i> Xóa'.html_safe, item, method: :delete, data: {confirm: 'Bạn có chắc muốn xóa?'} %>
                                         </li>
                                     </ul>
                                 </li>

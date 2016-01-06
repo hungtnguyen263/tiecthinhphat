@@ -1,29 +1,49 @@
-<%= form_for(@letter) do |f| %>
-  <% if @letter.errors.any? %>
+<% if @letter.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@letter.errors.count, "error") %> prohibited this letter from being saved:</h2>
-
-      <ul>
-      <% @letter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <% @letter.errors.full_messages.each do |message| %>
+            <span class="label label-warning"><%= message %></span>
+        <% end %>
+        <hr/>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+<%= form_for @letter, html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+        <%= f.label "Hình ảnh/Logo Công ty: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+          <%= f.file_field :image_url, class: "file-styled" %>
+          <span class="help-block">Chấp nhận định dạng: gif, png, jpg. Kích thước tối đa 2Mb</span>
+          <%= image_tag(@letter.image_url, size: "250x150", alt: "Hình ảnh", class: "img-rouded") %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label "Tiêu đề: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :title, placeholder: "Tên tiêu đề (VD: THƯ NGỎ, KHUYẾN MÃI,...)", class: "form-control" %>
+        </div>
+    </div>
+        
+    <div class="form-group field">
+            <%= f.label "Nội dung bài viết: ", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_area :content, rows: "4", cols: "4", id: "editor-full" %>
+            </div>
+        </div>
+
+    <div class="text-right">
+        <button type="submit" class="btn btn-success">Lưu <i class="icon-plus22 position-right"></i></button>
+    </div>
+<% end %>
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/assets/js/plugins/forms/styling/uniform.min.js' %>
+<%= javascript_include_tag '/assets/js/core/app.js' %>
+
+<%= javascript_include_tag '/assets/js/pages/form_layouts.js' %>
+<%= javascript_include_tag '/assets/js/plugins/forms/selects/select2.min.js' %>
+<%= javascript_include_tag '/ckeditor/ckeditor.js' %>
+<%= javascript_include_tag '/assets/js/pages/editor_ckeditor.js' %>
+<%= javascript_include_tag '//cdn.ckeditor.com/4.5.6/full/ckeditor.js' %>
+<!-- /theme JS files -->

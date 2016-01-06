@@ -1,39 +1,106 @@
-<p id="notice"><%= notice %></p>
+<!-- Page header -->
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><a href="<%= admins_path %>" class="btn-back"><i class="icon-arrow-left52 position-left"></i></a> <span class="text-semibold">Quản lý</span> - Thông tin</h4>
+        </div>
+    </div>
 
-<h1>Listing Companies</h1>
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="<%= admins_path %>"><i class="icon-home2 position-left"></i> Trang chủ</a></li>
+            <li><a href="<%= companies_path %>">Thông tin công ty</a></li>
+            <li class="active">Quản lý thông tin công ty</li>
+        </ul>
+    </div>
+</div>
+<!-- /page header -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Image url</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone 1</th>
-      <th>Phone 2</th>
-      <th>Intro</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Content area -->
+<div class="content">
 
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.image_url %></td>
-        <td><%= company.name %></td>
-        <td><%= company.email %></td>
-        <td><%= company.phone_1 %></td>
-        <td><%= company.phone_2 %></td>
-        <td><%= company.intro %></td>
-        <td><%= company.description %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <!-- Basic datatable -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">Thông tin - <span class="text-semibold">Công ty</span></h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <table class="table datatable-company">
+            <thead>
+                <tr>
+					<th>Hình ảnh</th>
+                    <th>Tên công ty</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>Điện thoại 1</th>
+					<th>Điện thoại 2</th>
+                    <th class="text-center">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @companies.each do |item| %>
+                    <tr>
+						<td><div class="media-left">
+							<img src="<%= item.image_url if item.image_url? %>" style="width: 82px; height: 56px;" class="img-rounded" alt="">
+						</div></td>
+                        <td>
+							<%= link_to (truncate(strip_tags(item.name), length: 40)), item %>
+						</td>
+                        <td>
+							<%= item.email %>
+						</td>
+						<td>
+							<%= item.address %>
+						</td>
+						<td>
+							<%= item.phone_1 %>
+						</td>
+						<td>
+							<%= item.phone_2 %>
+						</td>
+                        <td class="text-center">
+                            <ul class="icons-list">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-menu9"></i>
+                                    </a>
+    
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <%= link_to '<i class="glyphicon glyphicon-edit"></i> Chỉnh sửa'.html_safe, edit_company_path(item) %>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <!-- /basic datatable -->
 
-<br>
+    <!-- Footer -->
+	<div class="footer text-muted">
+		Copyright &copy; 2016 - Dịch Vụ Tiệc Thịnh Phát.
+	</div>
+	<!-- /footer -->
 
-<%= link_to 'New Company', new_company_path %>
+</div>
+<!-- /content area -->
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/assets/js/plugins/forms/styling/uniform.min.js' %>
+<%= javascript_include_tag '/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/assets/js/plugins/forms/selects/select2.min.js' %>
+
+<%= javascript_include_tag '/assets/js/core/app.js' %>
+<%= javascript_include_tag '/javascripts/datatables_company.js' %>
+<!-- /theme JS files -->

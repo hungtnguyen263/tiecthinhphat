@@ -1,29 +1,101 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><a href="<%= contacts_path %>" class="btn-back"><i class="icon-arrow-left52 position-left"></i></a> <span class="text-semibold">Contacts</span> - Management</h4>
+        </div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="<%= mains_path %>"><i class="icon-home2 position-left"></i> Trang chủ</a></li>
+            <li><a href="<%= contacts_path %>">Quản lý liên hệ</a></li>
+            <li><a href="<%= contacts_path %>">Quản lý liên hệ</a></li>
+            <li class="active"><%= @contact.name %></li>
+        </ul>
+    </div>
+</div>
+<!-- /page header -->
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+<!-- Content area -->
+<div class="content">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title"><span class="text-semibold"><%= @contact.name %></span></h5>
+        
+            <form class="form-horizontal" role="form">
+				
+                <div class="form-group">
+                    <%= label "", "Họ và tên: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                          <%= @contact.name %>
+                        <% end %>
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <%= label "", "Số điện thoại: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                          <%= @contact.phone %>
+                        <% end %>
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <%= label "", "Địa chỉ e-mail: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                          <%= @contact.email %>
+                        <% end %>
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <%= label "", "Tiêu đề/Chủ đề: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                          <%= @contact.title %>
+                        <% end %>
+                    </div>
+                </div>
+					
+                <div class="form-group">
+                    <%= label "", "Message: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                          <%= (@contact.message).html_safe %>
+                        <% end %>
+                    </div>
+                </div>
+					
+                <div class="form-group">
+                    <%= label "", "Created At: ", class: "control-label col-sm-2 text-semibold" %>
+                    <div class="col-sm-10">
+                        <%= content_tag(:p, class: "form-control-static") do %>
+                          <%= @contact.created_at.strftime("%d/%m/%Y") %>
+                        <% end %>
+                    </div>
+                </div>
+            </form>
+        
+            <%= link_to '<i class="icon-backward2 position-left"></i> Back'.html_safe, contacts_path, class: "btn btn-primary" %>
+            
+        </div>
+    </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
+    <!-- Footer -->
+	<div class="footer text-muted">
+		Copyright &copy; 2016 - Dịch Vụ Tiệc Thịnh Phát.
+	</div>
+	<!-- /footer -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @contact.title %>
-</p>
+</div>
+<!-- /content area -->
 
-<p>
-  <strong>Message:</strong>
-  <%= @contact.message %>
-</p>
+<!-- Theme JS files -->
+<%= javascript_include_tag '/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/assets/js/plugins/forms/selects/select2.min.js' %>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= javascript_include_tag '/assets/js/core/app.js' %>
+<!-- /theme JS files -->
