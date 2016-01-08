@@ -38,7 +38,9 @@
             <!-- Logo -->
             <div class="page-scroll">
               <!--Font Icon logo and text -->
-              <%= link_to 'Dịch Vụ Tiệc - Sự Kiện Thịnh Phát', root_path, class: 'navbar-brand' %>
+              <% @company.each do |info| %>
+              <%= link_to info.name, root_path, class: 'navbar-brand' %>
+            <% end%>
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,12 +73,14 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                 <div class="slide__text">
-                    <h2 class="slide__text-heading">Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</h2>
+                    <% @company.each do |info| %>
+                    <h2 class="slide__text-heading"><%= info.name %></h2>
                     <div class="hidden-sm hidden-xs">
                         <p class="lead">
-                            <i class="fa fa-phone"></i> 0938.22.44.57
+                            <i class="fa fa-phone"></i> <%= info.phone_1 %>
                             <br/>
-                            <i class="fa fa-phone"></i> 0963.817.660
+                            <i class="fa fa-phone"></i> <%= info.phone_2 %>
+                        <% end %>
                         </p>
                         <div class="page-scroll">
                             <a href="#contact" class="btn btn-default">Liên hệ</a>
@@ -253,7 +257,7 @@
                       <div class="col-sm-6 col-md-6 col-lg-4">
                           <div class="portfolio-item">
                               <div class="gallery-thumb">
-                                  <img src="<%= item.image_url if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
+                                  <img src="<%= item.image_url if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800px" height="640px" />
                                   <span class="overlay-mask"></span>
                                   <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
                                   <i class="fa fa-expand"></i></a>
@@ -403,7 +407,7 @@
                         <%= f.text_area :message, class: "textarea-field form-control", placeholder: "Lời nhắn (Bắt buộc)", required: true %>
                     </div>
                     <div class="form-group">
-                       <%= f.submit "Gửi liên hệ", class: "btn btn-default pull-right" %>
+                       <%= f.submit "Gửi liên hệ", class: "btn btn-default pull-right", alert: {message: 'Thank you!'} %>
                     </div>
                 <% end %>
                 <!--/Contact form -->
@@ -435,7 +439,7 @@
             </div>
             <!-- Bottom Credits -->
             <div class="col-sm-6 col-md-6 pull-right">
-                <p>Copyright © 2016 Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</p>
+                <p>Copyright © 2016. Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</br>Developed by <i>Hoàng Khang Incotech</i></p>
             </div>
         </div>
         <!-- /row-->
@@ -447,3 +451,4 @@
     </div>
 </footer>
 <!-- /footer ends -->
+<%= javascript_include_tag '/javascripts/contact-validation.js' %>

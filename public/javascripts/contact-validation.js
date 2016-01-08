@@ -11,6 +11,6 @@ function checkForm() {
     } else if (message == "") {
         return false;
     }
-    alert("Cảm ơn Qúy khách đã gửi tin nhắn liên hệ!");
+    alert("Cảm ơn Quý khách đã gửi tin nhắn liên hệ!");
     return true;
 }

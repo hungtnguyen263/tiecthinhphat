@@ -49,8 +49,8 @@
                 <% @contacts.each do |item| %>
                     <tr>
                         <td><%= link_to (truncate(strip_tags(item.name), length: 20)), item %></td>
-						<td><%= item.email %></td>
                         <td><%= item.phone %></td>
+						<td><%= item.email %></td>
 						<td><%= item.title %></td>
                         <td><%= truncate(strip_tags(item.message), length: 50) %></td>
                         <td>

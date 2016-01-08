@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
-
   # GET /pictures
   # GET /pictures.json
   def index
@@ -31,7 +30,7 @@ class PicturesController < ApplicationController
         format.html { redirect_to @picture, notice: 'Hình ảnh được tạo mới thành công.' }
         format.json { render :show, status: :created, location: @picture }
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end

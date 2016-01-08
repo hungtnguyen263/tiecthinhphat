@@ -13,7 +13,7 @@
         <%= f.label "Hình ảnh: ", class: "col-lg-2 control-label" %>
         <div class="col-lg-10">
           <%= f.file_field :image_url, class: "file-styled" %>
-          <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+          <span class="help-block">Chấp nhận tập tin hình ảnh dịnh dạng: gif, png, jpg.Tối đa 2Mb</span>
           <%= image_tag(@picture.image_url, size: "250x150", alt: "Hình ảnh", class: "img-rouded") %>
         </div>
     </div>
@@ -21,14 +21,14 @@
     <div class="form-group">
         <%= f.label "Tiêu đề: ", class: "col-lg-2 control-label" %>
         <div class="col-lg-10">
-            <%= f.text_field :title, placeholder: "Tiêu đề của hình ảnh", class: "form-control" %>
+            <%= f.text_field :title, placeholder: "Tiêu đề của hình ảnh (bắt buộc)", class: "form-control" %>
         </div>
     </div>
         
     <div class="form-group">
         <%= f.label "Thẻ: ", class: "col-lg-2 control-label" %>
         <div class="col-lg-10">
-            <%= f.collection_select(:type_id, Type.all, :id, :title, {:prompt => "Chọn thẻ..."}, {class: "select"}) %>
+            <%= f.collection_select(:type_id, Type.all, :id, :title, {:prompt => "Chọn thẻ... (bắt buộc)"}, {class: "select"}) %>
         </div>
     </div>
 
