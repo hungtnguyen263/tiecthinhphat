@@ -56,7 +56,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      format.html { redirect_to contacts_url, notice: 'Liên hệ trong danh sách đã được xóa thành công.' }
       format.json { head :no_content }
     end
   end

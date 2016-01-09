@@ -39,6 +39,7 @@
             <div class="page-scroll">
               <!--Font Icon logo and text -->
               <% @company.each do |info| %>
+              <img src="/assets/frontend/img/logo_header.png" class="img-responsive navbar-brand" />
               <%= link_to info.name, root_path, class: 'navbar-brand' %>
             <% end%>
             </div>
@@ -439,7 +440,8 @@
             </div>
             <!-- Bottom Credits -->
             <div class="col-sm-6 col-md-6 pull-right">
-                <p>Copyright © 2016. Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</br>Developed by <i>Hoàng Khang Incotech</i></p>
+                <p>Copyright © 2016. Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</br>
+                Developed by <i><%= link_to 'Hoang Khang Incotech', "http://hoangkhang.com.vn", :target => "_blank" %></i></p>
             </div>
         </div>
         <!-- /row-->

@@ -193,7 +193,7 @@ a:focus {text-decoration: none;}
 }
 
 .navbar-nav > li > a {
-  line-height: 43px;
+  line-height: 50px;
   padding: 10px 0px 10px 35px;
 }
 
@@ -307,12 +307,13 @@ ul.social-list li a i {
 ============================ */
 
 .navbar-brand {
-	font-size: 25px;
-	line-height: 30px;
+	font-size: 20px;
+	line-height: 40px;
 	margin-left: 0px;
 	color:#333;
 	text-transform:uppercase;
 	font-family: 'Bree Serif', serif;
+	font-weight: 900;
 }
  
 /*Logo icon */

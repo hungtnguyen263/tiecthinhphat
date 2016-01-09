@@ -1,0 +1,176 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: admins; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY admins (id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: admins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('admins_id_seq', 1, false);
+
+
+--
+-- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY companies (id, image_url, name, email, phone_1, phone_2, intro, description, created_at, updated_at, address) FROM stdin;
+2	logo_TP.png	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	bepthinhphat@yahoo.com	0938.22.44.57	0963.817.660	Đang cập nhật...	<p>Ch&uacute;ng t&ocirc;i chuy&ecirc;n:</p>\r\n\r\n<p>&nbsp; * Nhận đặt tiệc cưới, hỏi, li&ecirc;n hoan, sinh nhật, hội nghị, buffet,...</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc; b&agrave;n ghế, ch&eacute;n dĩa, ly t&aacute;ch c&aacute;c loại v&agrave; c&aacute;c dụng cụ tổ chức tiệc - sự kiện,...</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc; c&aacute;c dụng cụ tiệc buffet, teabreak,...</p>\r\n\r\n<p>&nbsp; * Phục vụ tận nơi theo y&ecirc;u cầu tại: tư gia, mặt bằng, nh&agrave; h&agrave;ng, cơ quan, x&iacute; nghiệp,...</p>\r\n\r\n<p>&nbsp; * Tư vấn, tổ chức tiệc - sự kiện,...</p>\r\n\r\n<p>&nbsp; * Cung cấp nh&acirc;n vi&ecirc;n bưng quả - m&acirc;m quả.</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc;, trang tr&iacute; b&agrave;n gia ti&ecirc;n v&agrave; b&agrave;n hai họ.</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc; s&acirc;n khấu.</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc; &acirc;m thanh, &aacute;nh s&aacute;ng v&agrave; bắn ph&aacute;o hoa kim tuyến, ph&aacute;o s&aacute;ng (điện).</p>\r\n\r\n<p>&nbsp; * Cho thu&ecirc; m&aacute;y chiếu.</p>\r\n\r\n<p>&nbsp; * Cung cấp vũ đo&agrave;n, MC, ban nhạc, kh&aacute;nh tiết.</p>\r\n\r\n<p>&nbsp; * Bố tr&iacute; sảnh tiệc theo phong c&aacute;ch nh&agrave; h&agrave;ng sang trọng.</p>\r\n\r\n<p>&nbsp; * Trang tr&iacute; kh&ocirc;ng gian cưới, l&ecirc;n &yacute; tưởng tiệc cưới.</p>\r\n\r\n<p>&nbsp; * Phục vụ &acirc;n cần - Lịch sự - Uy t&iacute;n.</p>\r\n	2016-01-06 07:18:46.099692	2016-01-06 07:38:38.625951	Đang cập nhật...
+\.
+
+
+--
+-- Name: companies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('companies_id_seq', 2, true);
+
+
+--
+-- Data for Name: contacts; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY contacts (id, name, email, phone, title, message, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('contacts_id_seq', 2, true);
+
+
+--
+-- Data for Name: letters; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY letters (id, image_url, title, content, created_at, updated_at) FROM stdin;
+1	logo_TP.png	DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PHÁT	<p>Lời n&oacute;i đầu ti&ecirc;n,&nbsp;<strong><span style="color:#0000CD">DỊCH VỤ TIỆC - SỰ KIỆN</span> <span style="color:#FF0000">THỊNH PH&Aacute;T</span></strong>&nbsp;xin gửi đến qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lời ch&uacute;c sức khỏe v&agrave; lời ch&agrave;o tr&acirc;n trọng nhất. K&iacute;nh ch&uacute;c qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lu&ocirc;n th&agrave;nh c&ocirc;ng trong cuộc sống v&agrave; th&agrave;nh đạt trong c&ocirc;ng việc.<br />\r\nCh&uacute;ng t&ocirc;i chuy&ecirc;n:<br />\r\n* Nhận đặt tiệc cưới, hỏi, li&ecirc;n hoan, sinh nhật, hội nghị, buffet,...<br />\r\n* Cho thu&ecirc; b&agrave;n ghế, ch&eacute;n dĩa, ly t&aacute;ch c&aacute;c loại v&agrave; c&aacute;c dụng cụ tổ chức tiệc - sự kiện,...<br />\r\n* Cho thu&ecirc; c&aacute;c dụng cụ tiệc buffet, teabreak,...<br />\r\n* Phục vụ tận nơi theo y&ecirc;u cầu tại: tư gia, mặt bằng, nh&agrave; h&agrave;ng, cơ quan, x&iacute; nghiệp,...<br />\r\n* Tư vấn, tổ chức tiệc - sự kiện,...<br />\r\n* Cung cấp nh&acirc;n vi&ecirc;n bưng quả - m&acirc;m quả.<br />\r\n* Cho thu&ecirc;, trang tr&iacute; b&agrave;n gia ti&ecirc;n v&agrave; b&agrave;n hai họ.<br />\r\n* Cho thu&ecirc; s&acirc;n khấu.<br />\r\n* Cho thu&ecirc; &acirc;m thanh, &aacute;nh s&aacute;ng v&agrave; bắn ph&aacute;o hoa kim tuyến, ph&aacute;o s&aacute;ng (điện).<br />\r\n* Cho thu&ecirc; m&aacute;y chiếu.<br />\r\n* Cung cấp vũ đo&agrave;n, MC, ban nhạc, kh&aacute;nh tiết.<br />\r\n* Bố tr&iacute; sảnh tiệc theo phong c&aacute;ch nh&agrave; h&agrave;ng sang trọng.<br />\r\n* Trang tr&iacute; kh&ocirc;ng gian cưới, l&ecirc;n &yacute; tưởng tiệc cưới.<br />\r\n* Phục vụ &acirc;n cần - Lịch sự - Uy t&iacute;n.</p>\r\n\r\n<p style="text-align:center"><span style="color:#FF0000"><strong>PHỤC VỤ TẬN NƠI - TƯ VẤN TẠI NH&Agrave;</strong></span></p>\r\n\r\n<p style="text-align:center"><span style="color:#DAA520"><em>Ch&uacute;ng t&ocirc;i tin tưởng rằng sẽ mang đến cho qu&yacute; kh&aacute;ch sự h&agrave;i l&ograve;ng</em></span></p>\r\n\r\n<p style="text-align:center"><span style="color:#800080">=&gt; H&atilde;y gọi cho ch&uacute;ng t&ocirc;i để được tư vấn miễn ph&iacute;, sử dụng dịch vụ ho&agrave;n hảo v&agrave; trọn vẹn nhất</span></p>\r\n\r\n<p style="text-align:center"><strong>ĐT:</strong>&nbsp;0938.22.44.57 - 0963.817.660</p>\r\n\r\n<p style="text-align:center"><strong>Website:</strong>&nbsp;<span style="color:#800080">tiecthinhphat.com</span>&nbsp;-&nbsp;<strong>Email:</strong>&nbsp;<span style="color:#DAA520">bepthinhphat@yahoo.com</span></p>\r\n\r\n<p style="text-align:center"><span style="color:#FF0000"><strong>THỊNH PH&Aacute;T</strong></span>&nbsp;-&nbsp;<span style="color:#0000CD"><strong>LU&Ocirc;N LU&Ocirc;N ĐỒNG H&Agrave;NH C&Ugrave;NG QU&Yacute; KH&Aacute;CH, QU&Yacute; ĐỐI T&Aacute;C</strong></span></p>\r\n\r\n<p style="text-align:center">Rất mong được sự quan t&acirc;m của qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c</p>\r\n\r\n<p style="text-align:center"><strong>TR&Acirc;N TRỌNG K&Iacute;NH CH&Agrave;O</strong></p>\r\n	2016-01-06 07:18:46.155662	2016-01-06 08:57:08.439507
+\.
+
+
+--
+-- Name: letters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('letters_id_seq', 1, true);
+
+
+--
+-- Data for Name: pictures; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY pictures (id, image_url, title, created_at, updated_at, type_id) FROM stdin;
+4	events-2.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:54:31.464963	2016-01-06 07:54:31.464963	3
+5	events-3.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:55:13.048867	2016-01-06 07:55:13.048867	3
+6	events-4.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:55:23.633977	2016-01-06 07:55:23.633977	3
+7	events-5.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:55:40.515428	2016-01-06 07:55:40.515428	3
+8	events-6.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:55:54.690187	2016-01-06 07:55:54.690187	3
+9	events-7.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:56:05.399355	2016-01-06 07:56:05.399355	2
+10	events-8.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:56:17.986	2016-01-06 07:56:17.986	2
+11	events-9.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:56:32.125752	2016-01-06 07:56:32.125752	3
+12	events-10.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:56:47.42324	2016-01-06 07:56:47.42324	3
+13	events-11.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:57:04.508416	2016-01-06 07:57:04.508416	3
+14	events-12.jpg	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:57:14.115787	2016-01-06 07:57:14.115787	3
+3	events-1.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-06 07:54:09.52282	2016-01-06 09:54:19.347261	1
+\.
+
+
+--
+-- Name: pictures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('pictures_id_seq', 14, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY schema_migrations (version) FROM stdin;
+20160105075544
+20160105075602
+20160105075755
+20160105075825
+20160105075854
+20160105075940
+20160105080026
+20160105085928
+20160106065319
+20160106101114
+\.
+
+
+--
+-- Data for Name: services; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY services (id, image_url, title, content, created_at, updated_at) FROM stdin;
+2	dich-vu-cho-thue-chen-dia.jpg	Dịch Vụ Cho Thuê Dụng Cụ, Thiết Bị Tổ Chức Tiệc - Sự Kiện	Cho thuê: Bàn ghế, Chén dĩa, Sân khấu, Thiết bị sự kiện, Dụng cụ tổ chức tiệc - sự kiện.	2016-01-06 07:18:46.120238	2016-01-06 09:20:12.762754
+3	dich-vu-trang-tri.jpg	Dịch Vụ Trang Trí	Trang trí bàn gia tiên, sân khấu, quầy buffet, tiệc - sự kiện, bàn lễ tân,...	2016-01-06 07:18:46.123174	2016-01-06 09:29:32.00555
+1	dich-vu-tu-van.jpg	Dịch Vụ Tư Vấn & Tổ Chức Tiệc Trọn Gói	Nhận đặt tiệc: Cưới, hỏi, liên hoan, sinh nhật, hội nghị, buffet,... tại tư gia, nhà hàng, cơ quan, xí nghiệp,... Tư vấn & Tổ chức tiệc - Sự kiện linh động, trọn gói.	2016-01-06 07:18:46.116359	2016-01-06 09:29:43.640334
+\.
+
+
+--
+-- Name: services_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('services_id_seq', 3, true);
+
+
+--
+-- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY types (id, title, description, created_at, updated_at) FROM stdin;
+1	Bàn ghế	Đang cập nhật...	2016-01-06 07:18:46.134619	2016-01-06 07:18:46.134619
+2	Chén dĩa	Đang cập nhật...	2016-01-06 07:18:46.138074	2016-01-06 07:18:46.138074
+3	Khác	Đang cập nhật...	2016-01-06 07:18:46.141702	2016-01-06 07:18:46.141702
+\.
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('types_id_seq', 3, true);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: hungnt
+--
+
+COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+1	admin@tiecthinhphat.com	$2a$10$Xembf/hqNUaaBiktXJpcYO8xrMYHaH.MxF/iVQui9EcWiOzu8rLMu	\N	\N	\N	3	2016-01-06 10:32:08.818147	2016-01-06 10:28:23.13358	192.168.1.89	192.168.1.89	2016-01-06 10:26:45.477616	2016-01-06 10:32:08.819862
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
+--
+
+SELECT pg_catalog.setval('users_id_seq', 1, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
