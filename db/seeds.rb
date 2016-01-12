@@ -6,6 +6,32 @@
 #   cities = City.create([( name: 'Chicago' ), ( name: 'Copenhagen' )])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Picture.delete_all
+#....
+Slideshow.delete_all
+#....
+Slideshow.create(
+  title: 'Tiêu để trình chiếu 1',
+  content: 'Đang cập nhật...',
+  position: 'Slide Show 01'
+)
+Slideshow.create(
+  title: 'Tiêu để trình chiếu 2',
+  content: 'Đang cập nhật...',
+  position: 'Slide Show 02'
+)
+Slideshow.create(
+  title: 'Tiêu để trình chiếu 3',
+  content: 'Đang cập nhật...',
+  position: 'Slide Show 03'
+)
+Slideshow.create(
+  title: 'Tiêu để trình chiếu 4',
+  content: 'Đang cập nhật...',
+  position: 'Slide Show 04'
+)
+#....
+
 Company.delete_all
 #....
 Company.create(

@@ -9,8 +9,8 @@
     <div class="breadcrumb-line">
         <ul class="breadcrumb">
             <li><a href="<%= admins_path %>"><i class="icon-home2 position-left"></i> Trang chủ</a></li>
-            <li><a href="<%= pictures_path %>">Hình ảnh</a></li>
-            <li class="active">Quản lý hình ảnh</li>
+            <li><a href="<%= slideshows_path %>">Trình chiếu</a></li>
+            <li class="active">Quản lý trình chiếu</li>
         </ul>
     </div>
 </div>
@@ -22,9 +22,8 @@
     <!-- Basic datatable -->
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <%= link_to 'Thêm hình ảnh mới', new_picture_path, class: 'btn btn-primary' %>
             <hr/>
-            <h5 class="panel-title">Danh sách <span class="text-semibold">HÌNH ẢNH</span></h5>
+            <h5 class="panel-title">Danh sách quản lý <span class="text-semibold">Trình chiếu</span></h5>
             <div class="heading-elements">
                 <ul class="icons-list">
                     <li><a data-action="collapse"></a></li>
@@ -34,18 +33,18 @@
             </div>
         </div>
         
-        <table class="table datatable-picture">
+        <table class="table datatable_slideshow">
             <thead>
                 <tr>
 					<th>Hình ảnh</th>
                     <th>Tiêu đề</th>
-                    <th>Thẻ</th>
-                    <th>Ngày tạo</th>
+                    <th>Nội dung</th>
+                    <th>Vị trí</th>
                     <th class="text-center">Thao tác</th>
                 </tr>
             </thead>
             <tbody>
-                <% @pictures.each do |item| %>
+              <% @slideshows.each do |item| %>
                     <tr>
 						<td>
 							<div class="media-left">
@@ -56,9 +55,13 @@
 							<%= link_to (truncate(strip_tags(item.title), length: 40)), item %>
 						</td>
                         <td>
-							<span class="label label-success"><%= item.type.title %></span>
+                          <%= truncate(strip_tags(item.content), length: 40) %>
 						</td>
-                        <td><%= item.created_at.strftime("%d/%m/%Y") %></td>
+                        <td>
+                          <span class="label label-success">
+                            <%= item.position %>
+                          </span>
+                        </td>
                         <td class="text-center">
                             <ul class="icons-list">
                                 <li class="dropdown">
@@ -68,10 +71,7 @@
     
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <%= link_to '<i class="glyphicon glyphicon-edit"></i> Chỉnh sửa'.html_safe, edit_picture_path(item) %>
-                                        </li>
-                                        <li>
-                                            <%= link_to '<i class="icon-cross2"></i> Xóa'.html_safe, item, method: :delete, data: {confirm: 'Bạn có chắc muốn xóa?'} %>
+                                            <%= link_to '<i class="glyphicon glyphicon-edit"></i> Chỉnh sửa'.html_safe, edit_slideshow_path(item) %>
                                         </li>
                                     </ul>
                                 </li>
@@ -99,5 +99,5 @@
 <%= javascript_include_tag '/assets/js/plugins/forms/selects/select2.min.js' %>
 
 <%= javascript_include_tag '/assets/js/core/app.js' %>
-<%= javascript_include_tag '/javascripts/datatables_picture.js' %>
+<%= javascript_include_tag '/javascripts/datatables_slideshow.js' %>
 <!-- /theme JS files -->

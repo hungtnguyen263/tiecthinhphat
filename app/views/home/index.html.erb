@@ -74,15 +74,11 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                 <div class="slide__text">
-                    <% @company.each do |info| %>
-                    <h2 class="slide__text-heading"><%= info.name %></h2>
+                    <% @slide1.each do |info| %>
+                    <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
-                        <p class="lead">
-                            <i class="fa fa-phone"></i> <%= info.phone_1 %>
-                            <br/>
-                            <i class="fa fa-phone"></i> <%= info.phone_2 %>
-                        <% end %>
-                        </p>
+                        <p class="lead"><%= info.content %></p>
+                    <% end %>
                         <div class="page-scroll">
                             <a href="#contact" class="btn btn-default">Liên hệ</a>
                         </div>
@@ -98,9 +94,11 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                 <div class="slide__text">
-                    <h2 class="slide__text-heading">Dịch Vụ Cho Thuê</h2>
+                    <% @slide2.each do |info| %>
+                    <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
-                        <p class="lead">Bàn ghế, Chén dĩa, Sân khấu, Thiết bị sự kiện, Dụng cụ tổ chức tiệc - sự kiện.</p>
+                        <p class="lead"><%= info.content %></p>
+                    <% end %>
                         <div class="page-scroll">
                             <a href="#contact" class="btn btn-default">Liên hệ</a>
                         </div>
@@ -116,10 +114,11 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                 <div class="slide__text">
-                    <h2 class="slide__text-heading">Dịch Vụ Tư Vấn & Tổ Chức Tiệc Trọn Gói</h2>
+                    <% @slide3.each do |info| %>
+                    <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
-                        <p class="lead">
-                            Nhận tư vấn & tổ chức tiệc - sự kiện linh động, trọn gói.</p>
+                        <p class="lead"><%= info.content %></p>
+                    <% end %>
                         <div class="page-scroll">
                             <a href="#contact" class="btn btn-default">Liên hệ</a>
                         </div>
@@ -135,9 +134,11 @@
                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
                 </svg>
                 <div class="slide__text">
-                    <h2 class="slide__text-heading">Dịch Vụ Trang Trí</h2>
+                    <% @slide4.each do |info| %>
+                    <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
-                        <p class="lead">Trang trí bàn gia tiên, sân khấu, quầy buffet, tiệc - sự kiện, bàn lễ tân,...</p>
+                        <p class="lead"><%= info.content %></p>
+                    <% end %>
                         <div class="page-scroll">
                             <a href="#contact" class="btn btn-default">Liên hệ</a>
                         </div>
@@ -190,11 +191,11 @@
     <div class="container">
         <div class="row">
             <!-- item -->
-             <% @service_first.each do |info| %>
+             <% @service.each do |info| %>
               <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
                
                   <div class="img-wrapper">
-                      <img src="<%= info.image_url if info.image_url? %>" alt="<%= info.title %>" class="img-responsive" width="900" height="524" />
+                      <img src="<%= info.image_url.smaller if info.image_url? %>" alt="<%= info.title %>" class="img-responsive" width="900" height="524" />
                   </div>
                   <h4 class="text-justify"><%= info.title %></h4>
                   <p class="text-justify"><%= info.content %></p>
@@ -228,45 +229,47 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="lightbox">
-                  <% @picture.each do |item| %>
-                    <% if item.type.title == "Bàn ghế" %>
-                      <!-- Image -->
-                      <div class="col-sm-6 col-md-6 col-lg-4 dogcat">
-                          <div class="portfolio-item">
-                              <div class="gallery-thumb">
-                                  <img src="<%= item.image_url if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
-                                  <span class="overlay-mask"></span>
-                                  <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
-                                  <i class="fa fa-expand"></i></a>
-                              </div>
-                          </div>
-                      </div>
-                    <% elsif  item.type.title == "Chén dĩa" %>
-                      <!-- Image -->
-                      <div class="col-sm-6 col-md-6 col-lg-4 other">
-                          <div class="portfolio-item">
-                              <div class="gallery-thumb">
-                                  <img src="<%= item.image_url if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
-                                  <span class="overlay-mask"></span>
-                                  <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
-                                  <i class="fa fa-expand"></i></a>
-                              </div>
-                          </div>
-                      </div>
-                    <% else %>
-                      <!-- Image -->
-                      <div class="col-sm-6 col-md-6 col-lg-4">
-                          <div class="portfolio-item">
-                              <div class="gallery-thumb">
-                                  <img src="<%= item.image_url if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800px" height="640px" />
-                                  <span class="overlay-mask"></span>
-                                  <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
-                                  <i class="fa fa-expand"></i></a>
-                              </div>
-                          </div>
-                      </div>
+                    <% if @picture.count > 0 %>
+                        <% @picture.each do |item| %>
+                          <% if item.type.title == "Bàn ghế" %>
+                            <!-- Image -->
+                            <div class="col-sm-6 col-md-6 col-lg-4 dogcat">
+                                <div class="portfolio-item">
+                                    <div class="gallery-thumb">
+                                        <img src="<%= item.image_url.large if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
+                                        <span class="overlay-mask"></span>
+                                        <a href="<%= item.image_url.large if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <i class="fa fa-expand"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                          <% elsif  item.type.title == "Chén dĩa" %>
+                            <!-- Image -->
+                            <div class="col-sm-6 col-md-6 col-lg-4 other">
+                                <div class="portfolio-item">
+                                    <div class="gallery-thumb">
+                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
+                                        <span class="overlay-mask"></span>
+                                        <a href="<%= item.image_url.medium if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <i class="fa fa-expand"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                          <% else %>
+                            <!-- Image -->
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <div class="portfolio-item">
+                                    <div class="gallery-thumb">
+                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800px" height="640px" />
+                                        <span class="overlay-mask"></span>
+                                        <a href="<%= item.image_url.medium if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <i class="fa fa-expand"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                          <% end %>
+                        <% end %>
                     <% end %>
-                  <% end %>
                 </div>
                 <!-- /lightbox-->
             </div>
