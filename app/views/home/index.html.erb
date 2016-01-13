@@ -75,6 +75,17 @@
                 </svg>
                 <div class="slide__text">
                     <% @slide1.each do |info| %>
+                    <style>
+                        .slide:nth-child(1) {
+                            left: 0;
+                        }
+                       .slide:nth-child(1) .slide__bg {
+                            left: 0;
+                            background-image: url("<%= info.image_url %>");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                       }
+                    </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
                         <p class="lead"><%= info.content %></p>
@@ -95,6 +106,17 @@
                 </svg>
                 <div class="slide__text">
                     <% @slide2.each do |info| %>
+                    <style>
+                        .slide:nth-child(2) {
+                            left: 100%;
+                        }
+                       .slide:nth-child(2) .slide__bg {
+                            left: -50%;
+                            background-image: url("<%= info.image_url %>");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                       }
+                    </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
                         <p class="lead"><%= info.content %></p>
@@ -115,6 +137,17 @@
                 </svg>
                 <div class="slide__text">
                     <% @slide3.each do |info| %>
+                    <style>
+                        .slide:nth-child(3) {
+                            left: 200%;
+                        }
+                       .slide:nth-child(3) .slide__bg {
+                                left: -100%;
+                                background-image: url("<%= info.image_url %>");
+                                background-repeat: no-repeat;
+                                background-position: center;
+                       }
+                    </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
                         <p class="lead"><%= info.content %></p>
@@ -135,6 +168,17 @@
                 </svg>
                 <div class="slide__text">
                     <% @slide4.each do |info| %>
+                    <style>
+                        .slide:nth-child(4) {
+                            left: 300%;
+                        }
+                       .slide:nth-child(4) .slide__bg {
+                            left: -150%;
+                            background-image: url("<%= info.image_url %>");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                       }
+                    </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
                         <p class="lead"><%= info.content %></p>

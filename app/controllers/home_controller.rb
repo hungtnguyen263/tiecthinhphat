@@ -10,5 +10,6 @@ class HomeController < ApplicationController
     @slide2 = Slideshow.where(position: 'Slide Show 02')
     @slide3 = Slideshow.where(position: 'Slide Show 03')
     @slide4 = Slideshow.where(position: 'Slide Show 04')
+    @slides = Slideshow.all
   end
 end
