@@ -82,7 +82,7 @@ Author URI: http://themeforest.net/user/ingridk
 		//Google Map
 
 		var mapCanvas = document.getElementById('map-canvas');
-		var myLatlng = new google.maps.LatLng(10.803704, 106.711984);
+		var myLatlng = new google.maps.LatLng(10.944784, 106.870161);
 		var mapOptions = {
 		zoom: 16,
 		scrollwheel: true,
@@ -93,9 +93,9 @@ Author URI: http://themeforest.net/user/ingridk
 		var map = new google.maps.Map(mapCanvas, mapOptions)
 		var marker = new google.maps.Marker({
 		position: myLatlng,
-		 icon: 'img/mapmarker.png',
+		 icon: '/assets/frontend/img/map-marker-icon.png',
 		map: map,
-		title: 'Hello World!'
+		title: 'Dịch Vụ Tiệc - Sự Kiện Thịnh Phát'
 		});
 		
 		//Owl sliders

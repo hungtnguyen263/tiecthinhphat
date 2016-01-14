@@ -84,7 +84,8 @@
                             background-image: url("<%= info.image_url %>");
                             background-repeat: no-repeat;
                             background-position: center;
-                       }
+                            font-variant: small-caps;
+                        }
                     </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
@@ -115,7 +116,8 @@
                             background-image: url("<%= info.image_url %>");
                             background-repeat: no-repeat;
                             background-position: center;
-                       }
+                            font-variant: small-caps;
+                        }
                     </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
@@ -142,11 +144,12 @@
                             left: 200%;
                         }
                        .slide:nth-child(3) .slide__bg {
-                                left: -100%;
-                                background-image: url("<%= info.image_url %>");
-                                background-repeat: no-repeat;
-                                background-position: center;
-                       }
+                            left: -100%;
+                            background-image: url("<%= info.image_url %>");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            font-variant: small-caps;
+                        }
                     </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
@@ -177,7 +180,8 @@
                             background-image: url("<%= info.image_url %>");
                             background-repeat: no-repeat;
                             background-position: center;
-                       }
+                            font-variant: small-caps;
+                        }
                     </style>
                     <h2 class="slide__text-heading"><%= info.title %></h2>
                     <div class="hidden-sm hidden-xs">
@@ -239,7 +243,7 @@
               <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
                
                   <div class="img-wrapper">
-                      <img src="<%= info.image_url.smaller if info.image_url? %>" alt="<%= info.title %>" class="img-responsive" width="900" height="524" />
+                      <img src="<%= info.image_url.large if info.image_url? %>" alt="<%= info.title %>" class="img-responsive" width="900" height="524" />
                   </div>
                   <h4 class="text-justify"><%= info.title %></h4>
                   <p class="text-justify"><%= info.content %></p>
@@ -280,9 +284,9 @@
                             <div class="col-sm-6 col-md-6 col-lg-4 dogcat">
                                 <div class="portfolio-item">
                                     <div class="gallery-thumb">
-                                        <img src="<%= item.image_url.large if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
+                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" />
                                         <span class="overlay-mask"></span>
-                                        <a href="<%= item.image_url.large if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
                                         <i class="fa fa-expand"></i></a>
                                     </div>
                                 </div>
@@ -292,9 +296,9 @@
                             <div class="col-sm-6 col-md-6 col-lg-4 other">
                                 <div class="portfolio-item">
                                     <div class="gallery-thumb">
-                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800" height="640" />
+                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive"  />
                                         <span class="overlay-mask"></span>
-                                        <a href="<%= item.image_url.medium if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
                                         <i class="fa fa-expand"></i></a>
                                     </div>
                                 </div>
@@ -304,9 +308,9 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="portfolio-item">
                                     <div class="gallery-thumb">
-                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive" width="800px" height="640px" />
+                                        <img src="<%= item.image_url.medium if item.image_url? %>" alt="<%= item.title %>" class="img-responsive"/>
                                         <span class="overlay-mask"></span>
-                                        <a href="<%= item.image_url.medium if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
+                                        <a href="<%= item.image_url if item.image_url? %>" data-gal="prettyPhoto[gallery]" class="link centered" title="<%= item.title %>">
                                         <i class="fa fa-expand"></i></a>
                                     </div>
                                 </div>
@@ -433,6 +437,7 @@
                   <!-- Adress info -->
                   <h4>Địa chỉ</h4>
                   <p><i class="fa fa-map-marker"></i><%= info.address %></p>
+                  <p><i class="fa fa-map-marker"></i><%= info.address_1 %></p>
                 <% end %>
             </div>
             <div class="col-md-7 col-md-offset-1 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
@@ -469,7 +474,9 @@
 
 <!--Map -->
 <div class="wow fadeInTop" data-wow-delay="0.2s">
-    <div id="map-canvas"></div>
+    <div id="map-canvas">
+        
+    </div>
 </div>
 <!-- Section ends -->
 
@@ -480,15 +487,12 @@
             <div class="col-sm-6 col-md-4">
                 <!-- Social Media icons -->
                 <ul class="social-media">
-                    <li><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a title="Youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><p>Copyright © 2016 Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</p></li>
                 </ul>
             </div>
             <!-- Bottom Credits -->
             <div class="col-sm-6 col-md-6 pull-right">
-                <p>Copyright © 2016. Dịch Vụ Tiệc - Sự Kiện Thịnh Phát</br>
-                Developed by <i><%= link_to 'Hoang Khang Incotech', "http://hoangkhang.com.vn", :target => "_blank" %></i></p>
+                <p>Developed by <a href="http://hoangkhang.com.vn" target="_blank"><u>Hoàng Khang Incotech</u></a></p>
             </div>
         </div>
         <!-- /row-->
