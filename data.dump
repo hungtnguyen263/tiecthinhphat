@@ -30,8 +30,8 @@ SELECT pg_catalog.setval('admins_id_seq', 1, false);
 -- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: hungnt
 --
 
-COPY companies (id, image_url, name, email, phone_1, phone_2, intro, description, created_at, updated_at, address) FROM stdin;
-4	\N	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	bepthinhphat@yahoo.com	0938.22.44.57	0963.817.660	Đang cập nhật...	Đang cập nhật...	2016-01-12 03:44:26.458002	2016-01-12 03:44:26.458002	Đang cập nhật...
+COPY companies (id, image_url, name, email, phone_1, phone_2, intro, description, created_at, updated_at, address, address_1) FROM stdin;
+4	logo_tiecTP.png	DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PHÁT	nguyenty@tiecthinhphat.com	0938.22.44.57	0963.817.660	Đang cập nhật...	<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">Ch&uacute;ng t&ocirc;i chuy&ecirc;n:</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Nhận đặt tiệc cưới, hỏi, li&ecirc;n hoan, sinh nhật, hội nghị, buffet,...</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc; b&agrave;n ghế, ch&eacute;n dĩa, ly t&aacute;ch c&aacute;c loại v&agrave; c&aacute;c dụng cụ tổ chức tiệc - sự kiện,...</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc; s&acirc;n khấu.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc; &acirc;m thanh, &aacute;nh s&aacute;ng v&agrave; bắn ph&aacute;o&nbsp;kim tuyến, ph&aacute;o s&aacute;ng (điện).</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc; m&aacute;y chiếu.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc; c&aacute;c dụng cụ tiệc buffet, teabreak,...</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cho thu&ecirc;, trang tr&iacute; b&agrave;n gia ti&ecirc;n v&agrave; b&agrave;n hai họ.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Phục vụ tận nơi theo y&ecirc;u cầu tại: tư gia, mặt bằng, nh&agrave; h&agrave;ng, cơ quan, x&iacute; nghiệp,...</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Tư vấn, tổ chức tiệc - sự kiện,...</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cung cấp nh&acirc;n vi&ecirc;n bưng quả - m&acirc;m quả.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Cung cấp vũ đo&agrave;n, MC, ban nhạc, kh&aacute;nh tiết.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Set up&nbsp;sảnh tiệc theo phong c&aacute;ch nh&agrave; h&agrave;ng sang trọng.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Trang tr&iacute; kh&ocirc;ng gian cưới, l&ecirc;n &yacute; tưởng tiệc cưới.</span></span></p>\r\n\r\n<p><span style="font-family:arial,helvetica,sans-serif"><span style="font-size:14px">- Phục vụ &acirc;n cần - Lịch sự - Uy t&iacute;n.</span>&nbsp;</span></p>\r\n	2016-01-12 03:44:26.458002	2016-01-14 08:48:36.788056	63 Lê Nguyên Đạt, P. Long Bình, Biên Hòa , Đồng Nai	Quận 9, TP. Hồ Chí Minh (đang cập nhật...)
 \.
 
 
@@ -62,7 +62,7 @@ SELECT pg_catalog.setval('contacts_id_seq', 1, false);
 --
 
 COPY letters (id, image_url, title, content, created_at, updated_at) FROM stdin;
-4	\N	DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PHÁT	<p>Lời n&oacute;i đầu ti&ecirc;n,&nbsp;<strong>DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PH&Aacute;T</strong>&nbsp;xin gửi đến qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lời ch&uacute;c sức khỏe v&agrave; lời ch&agrave;o tr&acirc;n trọng nhất. K&iacute;nh ch&uacute;c qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lu&ocirc;n th&agrave;nh c&ocirc;ng trong cuộc sống v&agrave; th&agrave;nh đạt trong c&ocirc;ng việc.<br />\nCh&uacute;ng t&ocirc;i chuy&ecirc;n:<br />\n* Nhận đặt tiệc cưới, hỏi, li&ecirc;n hoan, sinh nhật, hội nghị, buffet,...<br />\n* Cho thu&ecirc; b&agrave;n ghế, ch&eacute;n dĩa, ly t&aacute;ch c&aacute;c loại v&agrave; c&aacute;c dụng cụ tổ chức tiệc - sự kiện,...<br />\n* Cho thu&ecirc; c&aacute;c dụng cụ tiệc buffet, teabreak,...<br />\n* Phục vụ tận nơi theo y&ecirc;u cầu tại: tư gia, mặt bằng, nh&agrave; h&agrave;ng, cơ quan, x&iacute; nghiệp,...<br />\n* Tư vấn, tổ chức tiệc - sự kiện,...<br />\n* Cung cấp nh&acirc;n vi&ecirc;n bưng quả - m&acirc;m quả.<br />\n* Cho thu&ecirc;, trang tr&iacute; b&agrave;n gia ti&ecirc;n v&agrave; b&agrave;n hai họ.<br />\n* Cho thu&ecirc; s&acirc;n khấu.<br />\n* Cho thu&ecirc; &acirc;m thanh, &aacute;nh s&aacute;ng v&agrave; bắn ph&aacute;o hoa kim tuyến, ph&aacute;o s&aacute;ng (điện).<br />\n* Cho thu&ecirc; m&aacute;y chiếu.<br />\n* Cung cấp vũ đo&agrave;n, MC, ban nhạc, kh&aacute;nh tiết.<br />\n* Bố tr&iacute; sảnh tiệc theo phong c&aacute;ch nh&agrave; h&agrave;ng sang trọng.<br />\n* Trang tr&iacute; kh&ocirc;ng gian cưới, l&ecirc;n &yacute; tưởng tiệc cưới.<br />\n* Phục vụ &acirc;n cần - Lịch sự - Uy t&iacute;n.</p>\n\n<p style="text-align:center"><span style="color:#FF0000"><strong>PHỤC VỤ TẬN NƠI - TƯ VẤN TẠI NH&Agrave;</strong></span></p>\n\n<p style="text-align:center"><span style="color:#FF8C00"><em>Ch&uacute;ng t&ocirc;i tin tưởng rằng sẽ mang đến cho qu&yacute; kh&aacute;ch sự h&agrave;i l&ograve;ng</em></span></p>\n\n<p style="text-align:center"><span style="color:#800080">=&gt; H&atilde;y gọi cho ch&uacute;ng t&ocirc;i để được tư vấn miễn ph&iacute;, sử dụng dịch vụ ho&agrave;n hảo v&agrave; trọn vẹn nhất</span></p>\n\n<p style="text-align:center"><strong>ĐT:</strong>&nbsp;0938.22.44.57 - 0963.817.660</p>\n\n<p style="text-align:center"><strong>Website:</strong><span style="color:#FF8C00">&nbsp;</span><a href="http://tiecthinhphat.com/tiecthinhphat.com"><span style="color:#FF8C00">tiecthinhphat.com</span></a>&nbsp;-&nbsp;<strong>Email:</strong>&nbsp;<a href="mailto:bepthinhphat@yahoo.com"><span style="color:#FF8C00">bepthinhphat@yahoo.com</span></a></p>\n\n<p style="text-align:center"><span style="color:#FF0000"><strong>THỊNH PH&Aacute;T</strong></span>&nbsp;-&nbsp;<span style="color:#0000CD"><strong>LU&Ocirc;N LU&Ocirc;N ĐỒNG H&Agrave;NH C&Ugrave;NG QU&Yacute; KH&Aacute;CH, QU&Yacute; ĐỐI T&Aacute;C</strong></span></p>\n\n<p style="text-align:center"><span style="color:#FF8C00">Rất mong được sự quan t&acirc;m của qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c</span></p>\n\n<p style="text-align:center"><strong>TR&Acirc;N TRỌNG K&Iacute;NH CH&Agrave;O</strong></p>\n	2016-01-12 03:44:26.520584	2016-01-12 03:44:26.520584
+4	logo_tiecTP.png	TiecThinhPhat.Com	<p>Lời n&oacute;i đầu ti&ecirc;n,&nbsp;<strong>DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PH&Aacute;T</strong>&nbsp;xin gửi đến qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lời ch&uacute;c sức khỏe v&agrave; lời ch&agrave;o tr&acirc;n trọng nhất. K&iacute;nh ch&uacute;c qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c lu&ocirc;n th&agrave;nh c&ocirc;ng trong cuộc sống v&agrave; th&agrave;nh đạt trong c&ocirc;ng việc.<br />\r\nCh&uacute;ng t&ocirc;i chuy&ecirc;n:</p>\r\n\r\n<ul>\r\n\t<li>&nbsp;Nhận đặt tiệc cưới, hỏi, li&ecirc;n hoan, sinh nhật, hội nghị, buffet,...</li>\r\n\t<li>&nbsp;Cho thu&ecirc; b&agrave;n ghế, ch&eacute;n dĩa, ly t&aacute;ch c&aacute;c loại v&agrave; c&aacute;c dụng cụ tổ chức tiệc - sự kiện,...</li>\r\n\t<li>&nbsp;Cho thu&ecirc; s&acirc;n khấu,&nbsp;&acirc;m thanh, &aacute;nh s&aacute;ng, ...</li>\r\n\t<li>&nbsp;Cho thu&ecirc; c&aacute;c dụng cụ tiệc buffet, teabreak,...</li>\r\n\t<li>&nbsp;Cho thu&ecirc; m&aacute;y chiếu&nbsp;v&agrave; bắn ph&aacute;o&nbsp;kim tuyến, ph&aacute;o s&aacute;ng (điện).</li>\r\n\t<li>&nbsp;Cho thu&ecirc;, trang tr&iacute; b&agrave;n gia ti&ecirc;n v&agrave; b&agrave;n hai họ,..</li>\r\n\t<li>&nbsp;Phục vụ tận nơi theo y&ecirc;u cầu tại: tư gia, mặt bằng, nh&agrave; h&agrave;ng, cơ quan, x&iacute; nghiệp,...</li>\r\n\t<li>&nbsp;Tư vấn, tổ chức tiệc - sự kiện,...</li>\r\n\t<li>&nbsp;Cung cấp nh&acirc;n vi&ecirc;n bưng quả - m&acirc;m quả.</li>\r\n\t<li>&nbsp;Cung cấp vũ đo&agrave;n, MC, ban nhạc, kh&aacute;nh tiết.</li>\r\n\t<li>&nbsp;Trang tr&iacute; kh&ocirc;ng gian cưới, l&ecirc;n &yacute; tưởng tiệc cưới.</li>\r\n\t<li>&nbsp;Phục vụ &acirc;n cần - Lịch sự - Uy t&iacute;n.</li>\r\n</ul>\r\n\r\n<p style="text-align:center"><span style="color:#FF0000"><strong>PHỤC VỤ TẬN NƠI - TƯ VẤN TẠI NH&Agrave;</strong></span></p>\r\n\r\n<p style="text-align:center"><span style="color:#FF8C00"><em>Ch&uacute;ng t&ocirc;i tin tưởng rằng sẽ mang đến cho qu&yacute; kh&aacute;ch sự h&agrave;i l&ograve;ng</em></span></p>\r\n\r\n<p style="text-align:center"><span style="color:#800080">=&gt; H&atilde;y gọi cho ch&uacute;ng t&ocirc;i để được tư vấn miễn ph&iacute;, sử dụng dịch vụ ho&agrave;n hảo v&agrave; trọn vẹn nhất</span></p>\r\n\r\n<p style="text-align:center"><strong>ĐT:</strong>&nbsp;0938.22.44.57 - 0963.817.660</p>\r\n\r\n<p style="text-align:center"><strong>Website:</strong><span style="color:#FF8C00">&nbsp;</span><a href="http://tiecthinhphat.com/tiecthinhphat.com"><span style="color:#FF8C00">tiecthinhphat.com</span></a></p>\r\n\r\n<p style="text-align:center"><strong>Email:</strong>&nbsp;<a href="mailto:bepthinhphat@yahoo.com"><span style="color:#FF8C00">bepthinhphat@yahoo.com</span></a></p>\r\n\r\n<p style="text-align:center"><span style="color:#FF0000"><strong>THỊNH PH&Aacute;T</strong></span>&nbsp;-&nbsp;<span style="color:#0000CD"><strong>LU&Ocirc;N LU&Ocirc;N ĐỒNG H&Agrave;NH C&Ugrave;NG QU&Yacute; KH&Aacute;CH, QU&Yacute; ĐỐI T&Aacute;C</strong></span></p>\r\n\r\n<p style="text-align:center"><span style="color:#FF8C00">Rất mong được sự quan t&acirc;m của qu&yacute; kh&aacute;ch, qu&yacute; đối t&aacute;c</span></p>\r\n\r\n<p style="text-align:center"><strong>TR&Acirc;N TRỌNG K&Iacute;NH CH&Agrave;O</strong></p>\r\n	2016-01-12 03:44:26.520584	2016-01-14 02:40:02.724685
 \.
 
 
@@ -78,6 +78,11 @@ SELECT pg_catalog.setval('letters_id_seq', 4, true);
 --
 
 COPY pictures (id, image_url, title, created_at, updated_at, type_id) FROM stdin;
+8	DSCN1254.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-14 03:40:34.729149	2016-01-14 03:40:34.729149	11
+9	20151129_193635.jpg	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-14 03:42:48.141901	2016-01-14 03:42:48.141901	10
+10	IMG_20160106_154042.jpg	fđgfgghfg	2016-01-14 03:43:39.987761	2016-01-14 03:43:39.987761	10
+11	IMG_20151204_171640.jpg	Tiệc Thịnh Phát 	2016-01-14 03:48:53.527611	2016-01-14 03:48:53.527611	11
+12	DSCN0876.JPG	Dịch Vụ Tiệc - Sự Kiện Thịnh Phát	2016-01-14 03:50:55.181051	2016-01-14 03:50:55.181051	12
 \.
 
 
@@ -85,7 +90,7 @@ COPY pictures (id, image_url, title, created_at, updated_at, type_id) FROM stdin
 -- Name: pictures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: hungnt
 --
 
-SELECT pg_catalog.setval('pictures_id_seq', 4, true);
+SELECT pg_catalog.setval('pictures_id_seq', 13, true);
 
 
 --
@@ -104,6 +109,7 @@ COPY schema_migrations (version) FROM stdin;
 20160106065319
 20160106101114
 20160112014518
+20160114044355
 \.
 
 
@@ -112,9 +118,9 @@ COPY schema_migrations (version) FROM stdin;
 --
 
 COPY services (id, image_url, title, content, created_at, updated_at) FROM stdin;
-10	\N	Dịch Vụ Tư Vấn & Tổ Chức Tiệc Trọn Gói	Đang cập nhật...	2016-01-12 03:44:26.474836	2016-01-12 03:44:26.474836
-11	\N	Dịch Vụ Cho Thuê Dụng Cụ, Thiết Bị Tổ Chức Tiệc - Sự Kiện	Đang cập nhật...	2016-01-12 03:44:26.478718	2016-01-12 03:44:26.478718
-12	\N	Dịch Vụ Trang Trí	Đang cập nhật...	2016-01-12 03:44:26.481743	2016-01-12 03:44:26.481743
+10	20151029_131507.jpg	Cho Thuê Sân Khấu, Âm Thanh, Ánh Sáng	Cho thuê sân khấu, âm thanh, ánh sang, thiết bị, dụng cụ phục vụ tiệc - sự kiện,...	2016-01-12 03:44:26.474836	2016-01-14 02:17:30.918015
+11	DSCN1254.JPG	Cho Thuê Dụng Cụ, Thiết Bị Tổ Chức Tiệc - Sự Kiện	Cho thuê: Bàn ghế, Chén dĩa, Thiết bị, Dụng cụ tổ chức tiệc - sự kiện,...	2016-01-12 03:44:26.478718	2016-01-14 02:24:13.566556
+12	HINH_3.jpg	Tổ Chức Tiệc Trọn Gói	Nhận đặt tiệc: Cưới, hỏi, liên hoan, sinh nhật, hội nghị, buffet,... tại tư gia, mặt bằng, nhà hàng, cơ quan, xí nghiệp,... Tư vấn & Tổ chức tiệc - Sự kiện linh động, trọn gói.	2016-01-12 03:44:26.481743	2016-01-14 02:25:42.342932
 \.
 
 
@@ -130,10 +136,10 @@ SELECT pg_catalog.setval('services_id_seq', 12, true);
 --
 
 COPY slideshows (id, image_url, title, content, "position", created_at, updated_at) FROM stdin;
-13	\N	Tiêu để trình chiếu 4	Đang cập nhật...	Slide Show 04	2016-01-12 03:44:26.425629	2016-01-12 03:44:26.425629
-11	DSCN1313.JPG	DỊCH VỤ CHO THUÊ	 Bàn ghế, Chén dĩa, Sân khấu, Thiết bị sự kiện, Dụng cụ tổ chức tiệc - sự kiện.	Slide Show 02	2016-01-12 03:44:26.418661	2016-01-12 07:46:00.699751
-10	DSCN0494.JPG	DỊCH VỤ TIỆC - SỰ KIỆN THỊNH PHÁT	0938.22.44.57 - 0963.817.660	Slide Show 01	2016-01-12 03:44:26.410797	2016-01-12 07:47:35.555585
-12	\N	DỊCH VỤ TƯ VẤN & TỔ CHỨC TIỆC TRỌN GÓI	Nhận tư vấn & tổ chức tiệc - sự kiện linh động, trọn gó	Slide Show 03	2016-01-12 03:44:26.421779	2016-01-12 07:53:47.016853
+11	DSCN1313.JPG	DỊCH VỤ CHO THUÊ	Bàn ghế, Chén dĩa, Sân khấu, Thiết bị, Dụng cụ tổ chức tiệc - sự kiện.	Slide Show 02	2016-01-12 03:44:26.418661	2016-01-14 02:03:36.720679
+12	DSCN0494.JPG	DỊCH VỤ TƯ VẤN & TỔ CHỨC TIỆC TRỌN GÓI	Nhận tư vấn & tổ chức tiệc - sự kiện linh động, trọn gói	Slide Show 03	2016-01-12 03:44:26.421779	2016-01-14 02:05:40.882853
+13	DSCN0417.JPG	DỊCH VỤ TRANG TRÍ	Trang trí bàn gia tiên, sân khấu, quầy buffet, tiệc - sự kiện, bàn lễ tân,...	Slide Show 04	2016-01-12 03:44:26.425629	2016-01-14 02:07:51.995909
+10	DSCN0874.JPG	dịch vụ tiệc - sự kiện thịnh pháT	0938.22.44.57 - 0963.817.660	Slide Show 01	2016-01-12 03:44:26.410797	2016-01-14 02:36:16.604476
 \.
 
 
@@ -167,7 +173,7 @@ SELECT pg_catalog.setval('types_id_seq', 12, true);
 --
 
 COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
-4	admin@tiecthinhphat.com	$2a$10$XyMocgR9qsny.4pfohLO0OGU4U.nRH.Y.sHhI4QOV/dcetdG1WhNm	\N	\N	\N	1	2016-01-12 03:44:57.85298	2016-01-12 03:44:57.85298	192.168.1.89	192.168.1.89	2016-01-12 03:44:26.655077	2016-01-12 03:44:57.854763
+4	admin@tiecthinhphat.com	$2a$10$XyMocgR9qsny.4pfohLO0OGU4U.nRH.Y.sHhI4QOV/dcetdG1WhNm	\N	\N	\N	5	2016-01-14 15:43:54.130512	2016-01-14 01:52:41.08309	192.168.1.23	192.168.1.89	2016-01-12 03:44:26.655077	2016-01-14 15:43:54.132726
 \.
 
 
