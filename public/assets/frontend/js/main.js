@@ -82,7 +82,7 @@ Author URI: http://themeforest.net/user/ingridk
 		//Google Map
 
 		var mapCanvas = document.getElementById('map-canvas');
-		var myLatlng = new google.maps.LatLng(10.944784, 106.870161);
+		var myLatlng = new google.maps.LatLng();
 		var mapOptions = {
 		zoom: 16,
 		scrollwheel: true,
