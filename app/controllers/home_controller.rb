@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @company = Company.order("created_at DESC").first(1)
     @letter = Letter.order("created_at DESC").first(1)
     @service = Service.order("created_at DESC").first(3)
-    @picture = Picture.order("created_at DESC").first(12)
+    @picture = Picture.order("created_at DESC")
     
     @slide1 = Slideshow.where(position: 'Slide Show 01')
     @slide2 = Slideshow.where(position: 'Slide Show 02')
